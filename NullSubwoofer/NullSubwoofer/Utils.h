@@ -6,7 +6,7 @@
 #include <cstdio>
 #include <ctime>
 
-// Different Log Types
+// Can be usefull for lazy fuckers
 struct S_LogType
 {
 	int Default = 15;
@@ -16,8 +16,5 @@ struct S_LogType
 	int Info = 11;
 };
 
-// Log a message in the console with a timestamp. LogType changes the color of the text.
 void Log(std::string Message, int LogType);
-
-// Return the diskdrive serialnumber.
 std::string GetHWID();

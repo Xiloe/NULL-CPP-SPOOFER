@@ -1,6 +1,6 @@
 #include "Utils.h"
 
-// Log a message in the console with a timestamp. LogType changes the color of the text.
+// Log a message in the console with a timestamp. LogType changes the color of the text. aka you're lazy fucker.
 void Log(std::string Message, int LogType)
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);;

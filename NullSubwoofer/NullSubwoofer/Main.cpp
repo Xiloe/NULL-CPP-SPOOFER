@@ -1,29 +1,59 @@
-#include "Utils.h"		// Utilities.
+#include "Utils.h"		// Utils functions.
+#include "Main.h"		// Main functions.
+
+
+// TODO: Finish this shit I want money ffs
+// UPDATE: Fuck memory protection.
+
 
 int main()
 {
-	SetConsoleTitleA("Null 1.0 | 0x00#3042 | Build: nIvU2VHR0cDovL3d3dy5kZXYtc3RvcmUuZnIv4ZURlQ2hldmFaHR0cDovL3d3dy5kHR0cDovL3d3dy5kZXYtc3RvcmUuZnIvZXYtc3RvcmUuZn");
+	SetConsoleTitleA("Null 1.0 | 0x00#3042 | Build: idk");
 
 	S_LogType LogType;
+	std::string HWID = GetHWID();
 
-	Log("Default.", LogType.Default);
-	Log("Warning.", LogType.Warning);
-	Log("Success.", LogType.Success);
-	Log("Error.", LogType.Error);
-	Log("Info.\n", LogType.Info);
+	Log("Getting latest version", LogType.Info);
 
-	Log("Custom.", 3);
-	Log("Custom.", 5);
-	Log("Custom.\n", 23);
+	// Download here / or RunPE shit ?
 
-	CHAR SERIAL[] = "----------";
-	CHAR CUSTOM[] = "NULL-";
+	Log("Done\n", LogType.Success);
+	Sleep(2000);
 
-	Log("SERIAL = " + std::to_string(((DWORD)strlen(SERIAL))), LogType.Info);
-	Log("CUSTOM = " + std::to_string(((DWORD)strlen(CUSTOM))), LogType.Info);
-	Log("SUM    = " + std::to_string(((DWORD)strlen(SERIAL) + (DWORD)strlen(CUSTOM))), LogType.Success);
+	Log("Press a key to start\n", LogType.Info);
+	getchar();
 
-	Beep(3000, 100);
-	Sleep(60000);
+	if (HWID.find("NULL") != std::string::npos)
+	{
+		Log("Already Spoofed, please restart your computer\n", LogType.Default);
+		Beep(230, 200);
+		Sleep(2000);
+		return -1;
+	}
+
+	Log("Cleaning Traces", LogType.Default); Sleep(3000);
+
+	// Clean here you fag
+
+	Log("Cleaned Traces\n", LogType.Success);
+
+	Log("Resetting Adapters", LogType.Default);
+
+	// Reset here you fag
+
+	Log("Skipped Reset Adapters\n", LogType.Success);
+
+	Log("Spoofing DiskDrive(s), Volume ID(s), NIC, SMBIOS, GPU, CPU, BaseBoard", LogType.Default); Sleep(5000);
+	Log("Old C: Serial: " + HWID, LogType.Warning);
+
+	// Spoof here you fag
+
+	Log("New C: Serial: " + HWID, LogType.Warning);
+	Log("Spoofed DiskDrive(s), Volume ID(s), NIC, SMBIOS, GPU, CPU, BaseBoard\n", LogType.Success);
+
+	Log("Spoofer done.", LogType.Default);
+
+	Beep(523, 100);
+	Sleep(3000);
 	return 0;
 }
